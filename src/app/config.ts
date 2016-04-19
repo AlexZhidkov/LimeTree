@@ -9,7 +9,6 @@ angular.module('app.config', [])
 
   // where to redirect users if they need to authenticate (see security.js)
   .constant('loginRedirectPath', '/login')
-  .constant('orderFormRedirectPath', '/orderForm')
 
   // your Firebase data URL goes here, no trailing slash
   .constant('FBURL', 'https://limetree.firebaseio.com')

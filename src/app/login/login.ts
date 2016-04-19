@@ -22,7 +22,7 @@
                     $scope.err = errMessage(error);
                 } else {
                     console.log(authData);
-                    $location.path('/orderForm');
+                    $location.path('/dashboard');
                 }
             });
         }
@@ -33,20 +33,12 @@
                 if (error) {
                     $scope.err = errMessage(error);
                 } else {
-                    $location.path('/orderForm');
+                    $location.path('/dashboard');
                 }
             });
         }
 
-        $scope.callPhone = function() {
-            window.location.href = 'tel:+61406522097';
-        }
-
-        $scope.sendSms = function() {
-            window.location.href = 'sms:+61406522097';
-        }
-
-        function errMessage(err) {
+         function errMessage(err) {
             return angular.isObject(err) && err.code ? err.code : err + '';
         }
     }

@@ -29,17 +29,17 @@
         'app.login',
         'app.orders',
         'app.orderItem',
-        'app.orderForm'
+        'app.questions'
     ])
 
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.otherwise({
-                redirectTo: '/orderForm'
+                redirectTo: '/dashboard'
             });
         }])
 
-        .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath', 'orderFormRedirectPath', 'fbutil', '$firebaseObject',
-            function($rootScope, $location, Auth, loginRedirectPath, orderFormRedirectPath, fbutil, $firebaseObject) {
+        .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath', 'fbutil', '$firebaseObject',
+            function($rootScope, $location, Auth, loginRedirectPath,  fbutil, $firebaseObject) {
                 var unbind;
                 // track status of authentication
                 Auth.$onAuth(function(user) {
@@ -49,8 +49,6 @@
                         profile.$bindTo($rootScope, 'profile').then(function(ub) {
                             unbind = ub;
                         });
-
-                        //$location.path(orderFormRedirectPath);
                     }
                     else {
                         if (unbind) { unbind(); }

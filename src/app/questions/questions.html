@@ -1,0 +1,11 @@
+<md-list ng-cloak data-as-sortable="vm.dragControlListeners" data-ng-model="vm.items">
+    <md-subheader class="md-no-sticky">Drag and Drop to reorder</md-subheader>
+    <md-list-item data-ng-repeat="item in vm.items" data-as-sortable-item>
+        <p data-as-sortable-item-handle>{{item.label}}</p>
+    </md-list-item>
+</md-list>
+<md-input-container class="md-block">
+    <label>Enter new question</label>
+    <input ng-model="vm.newQuestion" type="text">
+</md-input-container>
+<md-button class="md-raised" ng-click="vm.AddNew()">Add</md-button>
