@@ -13,7 +13,7 @@
 
     var config = {
         appErrorPrefix: '[WLI Error] ', //Configure the exceptionHandler decorator
-        appTitle: 'We Love Ironing',
+        appTitle: 'Limetree',
         version: '1.0.0'
     };
 

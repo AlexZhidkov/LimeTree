@@ -16,7 +16,6 @@ install:
 
 after_success:
   - gulp build
-  - ls -al
   - ./deploy.sh
 
 notifications:

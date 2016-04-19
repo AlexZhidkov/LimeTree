@@ -1,9 +1,9 @@
 {
-  "name": "ironing",
+  "name": "limetree",
   "description": "",
   "version": "1.0.0",
-  "homepage": "https://ironing.firebaseapp.com/",
-  "repository": "https://github.com/AlexZhidkov/Ironing",
+  "homepage": "https://limetree.firebaseapp.com/",
+  "repository": "https://github.com/AlexZhidkov/LimeTree",
   "private": true,
   "license": "MIT",
   "devDependencies": {
