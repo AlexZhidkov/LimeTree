@@ -1,0 +1,11 @@
+<md-list ng-cloak data-ng-model="vm.items">
+    <md-subheader class="md-no-sticky">Actionable Items</md-subheader>
+    <md-list-item data-ng-repeat="item in vm.items">
+        <p>{{item.label}}</p>
+    </md-list-item>
+</md-list>
+<md-input-container class="md-block">
+    <label>Enter new actionable item</label>
+    <input ng-model="vm.newItem" type="text">
+</md-input-container>
+<md-button class="md-raised" ng-click="vm.AddNew()">Add</md-button>

@@ -21,6 +21,7 @@
         }
 
         function signOut() {
+            buildDelayedToggler('left');
             $rootScope.profile = null;
             fbutil.ref().unauth();
             $location.path(loginRedirectPath);

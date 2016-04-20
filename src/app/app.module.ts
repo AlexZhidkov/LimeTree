@@ -29,6 +29,8 @@
         'app.login',
         'app.orders',
         'app.orderItem',
+        'app.questionnaire',
+        'app.actionableItems',
         'app.questions'
     ])
 
