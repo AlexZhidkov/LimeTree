@@ -8,18 +8,10 @@
     /**
      * @ngInject
      */
-    function Questions($rootScope, Auth, $location, fbutil, user, logger) {
+    function Questions($rootScope, QuestionList, user, logger) {
         var vm = this;
         vm.newQuestion = null;
-        vm.items = [{
-            label: 'Question One?'
-        }, {
-                label: 'Question Two?'
-            }, {
-                label: 'Very important question?'
-            }, {
-                label: 'Do you have employees?'
-            }];
+        vm.questions = QuestionList;
         vm.AddNew = AddNew;
         vm.dragControlListeners = dragControlListeners;
 
@@ -33,9 +25,10 @@
         };
 
         function AddNew() {
-            vm.items.push({ label: vm.newQuestion });
+            vm.questions.$add({ label: vm.newQuestion });
             vm.newQuestion = null;
-        }
+        };
+
         /*
                        var dragControlListeners = {
                             accept: function (sourceItemHandleScope, destSortableScope) { return boolean }//override to determine drag is allowed or not. default is true.
@@ -51,4 +44,5 @@
                         }
                */
     }
+
 })();

@@ -1,6 +1,9 @@
-<md-list ng-cloak data-as-sortable="vm.dragControlListeners" data-ng-model="vm.items">
+<div ng-hide="vm.questions.length" layout="row" layout-sm="column" layout-align="space-around">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-list ng-show="vm.questions.length" ng-cloak data-as-sortable="vm.dragControlListeners" data-ng-model="vm.questions">
     <md-subheader class="md-no-sticky">Drag and Drop to reorder</md-subheader>
-    <md-list-item data-ng-repeat="item in vm.items" data-as-sortable-item>
+    <md-list-item data-ng-repeat="item in vm.questions" data-as-sortable-item>
         <p data-as-sortable-item-handle>{{item.label}}</p>
     </md-list-item>
 </md-list>
