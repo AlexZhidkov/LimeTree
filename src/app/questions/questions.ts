@@ -13,36 +13,21 @@
         vm.newQuestion = null;
         vm.questions = QuestionList;
         vm.AddNew = AddNew;
-        vm.dragControlListeners = dragControlListeners;
-
-        var dragControlListeners = {
-            itemMoved: function (event) {
-                console.log('itemMoved : ', event.source.index, 'to', event.dest.index);
-            },
+        vm.dragControlListeners = {
             orderChanged: function (event) {
-                console.log('orderChanged : ', event.source.index, 'to', event.dest.index);
+                vm.questions.forEach(reindex);
             }
         };
 
+        function reindex(item, index) {
+            item.index = index;
+        }
+
         function AddNew() {
-            vm.questions.$add({ label: vm.newQuestion });
+            if (vm.newQuestion) {
+                vm.questions.$add({ label: vm.newQuestion, index: vm.questions.length });
+            }
             vm.newQuestion = null;
         };
-
-        /*
-                       var dragControlListeners = {
-                            accept: function (sourceItemHandleScope, destSortableScope) { return boolean }//override to determine drag is allowed or not. default is true.
-                    itemMoved: function (event) {//Do what you want},
-                                orderChanged: function(event) {//Do what you want},
-                                    containment: '#board'//optional param.
-                                    clone: true //optional param for clone feature.
-                                    allowDuplicates: false //optional param allows duplicates to be dropped.
-                                };
-                
-                 
-                            }
-                        }
-               */
     }
-
 })();
