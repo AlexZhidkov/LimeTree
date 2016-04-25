@@ -40,25 +40,19 @@
             });
         }])
 
-        .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath', 'fbutil', '$firebaseObject',
-            function($rootScope, $location, Auth, loginRedirectPath,  fbutil, $firebaseObject) {
-                var unbind;
+        .run(['$rootScope', '$location', 'Auth', 'loginRedirectPath', 'homeRedirectPath', 'fbutil', '$firebaseObject',
+            function($rootScope, $location, Auth, loginRedirectPath, homeRedirectPath, fbutil, $firebaseObject) {
                 // track status of authentication
                 Auth.$onAuth(function(user) {
                     $rootScope.loggedIn = !!user;
                     if ($rootScope.loggedIn) {
-                        var profile = $firebaseObject(fbutil.ref('users', user.uid));
-                        profile.$bindTo($rootScope, 'profile').then(function(ub) {
-                            unbind = ub;
-                        });
+                       $rootScope.profile = $firebaseObject(fbutil.ref('users', user.uid));
+                       $location.path(homeRedirectPath);
                     }
                     else {
-                        if (unbind) { unbind(); }
                         $location.path(loginRedirectPath);
                     }
-
                 });
-
             }]);
 
 })();

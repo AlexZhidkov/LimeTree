@@ -3,8 +3,9 @@
 </div>
 <md-list ng-show="vm.questions.length" ng-cloak data-as-sortable="vm.dragControlListeners" data-ng-model="vm.questions">
     <md-subheader class="md-no-sticky">Drag and Drop to reorder</md-subheader>
-    <md-list-item data-ng-repeat="item in vm.questions" data-as-sortable-item>
+    <md-list-item data-ng-repeat="item in vm.questions" data-as-sortable-item class="noright">
         <p data-as-sortable-item-handle>{{item.label}}</p>
+        <md-checkbox class="md-secondary" ng-model="item.edit"></md-checkbox>
     </md-list-item>
 </md-list>
 <md-input-container class="md-block">
