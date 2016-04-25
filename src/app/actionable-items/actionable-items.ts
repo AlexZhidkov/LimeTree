@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     angular
@@ -8,19 +8,14 @@
     /**
      * @ngInject
      */
-    function ActionableItems($rootScope, Auth, fbutil, user, logger) {
+    function ActionableItems(ItemsList) {
         var vm = this;
+        vm.items = ItemsList;
         vm.newItem = null;
-        vm.items = [
-            { label: 'Item One' },
-            { label: 'Item Two' },
-            { label: 'Very important item' },
-            { label: 'Item Related to employees' }
-        ];
         vm.AddNew = AddNew;
 
         function AddNew() {
-            vm.items.push({ label: vm.newItem });
+            vm.items.$add({ label: vm.newItem });
             vm.newItem = null;
         }
 
