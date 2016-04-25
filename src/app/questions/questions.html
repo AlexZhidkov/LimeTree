@@ -1,15 +1,25 @@
 <div ng-hide="vm.questions.length" layout="row" layout-sm="column" layout-align="space-around">
     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>
+<div ng-show="vm.editIndex !== null">
+    <md-input-container class="md-block">
+        <label>Edit question</label>
+        <input ng-model="vm.questions[vm.editIndex].label" type="text">
+    </md-input-container>
+    <md-button class="md-raised" ng-click="vm.editIndex = null">Ok</md-button>
+    <md-button class="md-raised" ng-click="vm.Delete()">Delete</md-button>
+</div>
+<div ng-show="vm.editIndex === null">
+    <md-input-container class="md-block">
+        <label>Enter new question</label>
+        <input ng-model="vm.newQuestion" type="text">
+    </md-input-container>
+    <md-button class="md-raised" ng-click="vm.AddNew()">Add</md-button>
+</div>
 <md-list ng-show="vm.questions.length" ng-cloak data-as-sortable="vm.dragControlListeners" data-ng-model="vm.questions">
     <md-subheader class="md-no-sticky">Drag and Drop to reorder</md-subheader>
     <md-list-item data-ng-repeat="item in vm.questions" data-as-sortable-item class="noright">
         <p data-as-sortable-item-handle>{{item.label}}</p>
-        <md-checkbox class="md-secondary" ng-model="item.edit"></md-checkbox>
+        <icon class="md-secondary material-icons" ng-click="vm.editIndex = $index">edit</icon>
     </md-list-item>
 </md-list>
-<md-input-container class="md-block">
-    <label>Enter new question</label>
-    <input ng-model="vm.newQuestion" type="text">
-</md-input-container>
-<md-button class="md-raised" ng-click="vm.AddNew()">Add</md-button>
