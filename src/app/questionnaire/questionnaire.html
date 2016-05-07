@@ -1,17 +1,9 @@
-<md-list ng-cloak data-ng-model="vm.items">
-    <md-subheader class="md-no-sticky">Questionnaire</md-subheader>
-    <md-list-item data-ng-repeat="item in vm.items | filter:{answer: ''}">
-        <p>{{item.label}} - {{item.answer}}</p>
-    </md-list-item>
-</md-list>
-<md-card data-ng-repeat="item in vm.items | filter:{answer: null} | limitTo: 1 ">
-    <md-card-title>
-        <md-card-title-text>
+<div ng-cloak flex-gt-md="50" layout="column" layout-padding layout-align="top left">
+    <md-list data-ng-model="vm.questions">
+        <md-subheader class="md-no-sticky">Questionnaire</md-subheader>
+        <md-list-item data-ng-repeat="item in vm.questions">
             <p>{{item.label}}</p>
-        </md-card-title-text>
-    </md-card-title>
-    <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="item.answer = 'yes'">Yes</md-button>
-        <md-button ng-click="item.answer = 'no'">No</md-button>
-    </md-card-actions>
-</md-card>
+            <md-switch class="md-secondary" ng-model="item.answer"></md-switch>
+        </md-list-item>
+    </md-list>
+</div>

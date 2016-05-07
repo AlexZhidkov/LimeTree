@@ -36,7 +36,7 @@
 
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.otherwise({
-                redirectTo: '/dashboard'
+                redirectTo: '/home'
             });
         }])
 

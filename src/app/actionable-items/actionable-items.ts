@@ -8,11 +8,12 @@
     /**
      * @ngInject
      */
-    function ActionableItems(ItemsList) {
+    function ActionableItems(ItemsList, tenant) {
         var vm = this;
-        vm.items = ItemsList;
+        vm.items = ItemsList(tenant);
         vm.newItem = null;
         vm.AddNew = AddNew;
+        vm.tenant = tenant;
 
         function AddNew() {
             vm.items.$add({ label: vm.newItem });

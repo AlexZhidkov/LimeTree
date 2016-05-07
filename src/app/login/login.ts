@@ -22,7 +22,7 @@
                     $scope.err = errMessage(error);
                 } else {
                     console.log(authData);
-                    $location.path('/dashboard');
+                    //$location.path('/dashboard');
                 }
             });
         }
@@ -33,7 +33,7 @@
                 if (error) {
                     $scope.err = errMessage(error);
                 } else {
-                    $location.path('/dashboard');
+                    //$location.path('/dashboard');
                 }
             });
         }

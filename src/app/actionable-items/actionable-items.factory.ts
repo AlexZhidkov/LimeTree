@@ -9,7 +9,10 @@
      * @ngInject
      */
     function ItemsList(fbutil, $firebaseArray) {
-        var ref = fbutil.ref('items');
-        return $firebaseArray(ref);
+        return function (tenant:string) {
+            console.log(tenant);
+            var ref = fbutil.ref(tenant + '/items');
+            return $firebaseArray(ref);            
+        }
     }
 })();

@@ -8,7 +8,7 @@
                     <md-list-item md-ink-ripple>
                         <i class="material-icons">event_note</i>
                         <a class="menu-item" href="#/questions" ng-click="vm.toggleLeft()">Questions</a>
-                    </md-list-item >
+                    </md-list-item>
                     <md-list-item md-ink-ripple>
                         <i class="material-icons">list</i>
                         <a class="menu-item" href="#/actionableItems" ng-click="vm.toggleLeft()">Actionable Items</a>
@@ -35,9 +35,7 @@
             </div>
         </md-toolbar>
 
-        <div layout="column" layout-fill layout-align="top center">
-            <div ng-view></div>
-        </div>
+        <div ng-view></div>
         <div flex></div>
     </md-content>
 </section>
