@@ -12,7 +12,7 @@
     }
 
     var config = {
-        appErrorPrefix: '[WLI Error] ', //Configure the exceptionHandler decorator
+        appErrorPrefix: '[LimeTree Error] ', //Configure the exceptionHandler decorator
         appTitle: 'Limetree',
         version: '1.0.0'
     };
@@ -30,7 +30,7 @@
 
         // Configure the common route provider
         routehelperConfigProvider.config.$routeProvider = $routeProvider;
-        routehelperConfigProvider.config.docTitle = 'WLI: ';
+        routehelperConfigProvider.config.docTitle = 'LimeTree: ';
         var resolveAlways = {
             // ready: ['dataservice', function (dataservice) {
             //    return dataservice.ready();
