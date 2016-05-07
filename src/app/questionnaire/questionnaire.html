@@ -1,9 +1,124 @@
 <div ng-cloak flex-gt-md="50" layout="column" layout-padding layout-align="top left">
     <md-list data-ng-model="vm.questions">
-        <md-subheader class="md-no-sticky">Questionnaire</md-subheader>
-        <md-list-item data-ng-repeat="item in vm.questions">
-            <p>{{item.label}}</p>
-            <md-switch class="md-secondary" ng-model="item.answer"></md-switch>
+        <md-subheader class="md-no-sticky">Does the business have a current written copy of the following? If yes, when was it last reviewed and updated?</md-subheader>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isBusinessPlan"></md-checkbox>
+            <p>Business Plan</p>
+            <md-datepicker ng-model="vm.businessPlanDate" md-placeholder="Enter date"></md-datepicker>
         </md-list-item>
-    </md-list>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isMarketingPlan"></md-checkbox>
+            <p>Marketing Plan</p>
+            <md-datepicker ng-model="vm.marketingPlanDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isRiskManagementPlan"></md-checkbox>
+            <p>Risk Management Plan</p>
+            <md-datepicker ng-model="vm.riskManagementPlanDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isHumanRelationsPolicies"></md-checkbox>
+            <p>Human Relations Policies & Procedures</p>
+            <md-datepicker ng-model="vm.humanRelationsPoliciesDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isShareholdersAgreement"></md-checkbox>
+            <p>Shareholders / Unit Holders / Partners agreement</p>
+            <md-datepicker ng-model="vm.shareholdersAgreementDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isBusinessSuccessionPlan"></md-checkbox>
+            <p>Business Succession Plan</p>
+            <md-datepicker ng-model="vm.businessSuccessionPlanDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isProfitLossForecast"></md-checkbox>
+            <p>Forecast Profit & Loss</p>
+            <md-datepicker ng-model="vm.profitLossForecastDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isCashFlowForecast"></md-checkbox>
+            <p>Forecast Cash Flow Statement</p>
+            <md-datepicker ng-model="vm.CashFlowForecastDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isAssetManagementStrategy"></md-checkbox>
+            <p>Asset Management Strategy</p>
+            <md-datepicker ng-model="vm.assetManagementStrategyDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isOrganisationalChart"></md-checkbox>
+            <p>Organisational Chart</p>
+            <md-datepicker ng-model="vm.organisationalChartDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-list-item>
+            <md-checkbox ng-model="vm.isJobDescriptions"></md-checkbox>
+            <p>Job Descriptions and Responsibilities</p>
+            <md-datepicker ng-model="vm.jobDescriptionsDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+        <md-subheader class="md-no-sticky">Does the Business Currently:</md-subheader>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isEmployStaff"></md-checkbox>
+            <p>Employ Staff</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isEngageSubcontractors"></md-checkbox>
+            <p>Engage Sub-contractors</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isAdditionalSuperannuation"></md-checkbox>
+            <p>Pay Additional Superannuation?</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isWorkersCompensationInsurance"></md-checkbox>
+            <p>Have Workers Compensation Insurance</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isProfessionalIndemnityInsurance"></md-checkbox>
+            <p>Have Professional Indemnity Insurance</p>
+            <md-datepicker ng-model="vm.professionalIndemnityInsuranceDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isBusinessInsurance"></md-checkbox>
+            <p>Have Business Insurance</p>
+            <md-datepicker ng-model="vm.businessInsuranceDate" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isOtherInsurace"></md-checkbox>
+            <p>Have any other types of Insurace?</p>
+            <md-datepicker ng-model="vm.otherInsurace" md-placeholder="Enter date"></md-datepicker>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isReviewFixedAssets"></md-checkbox>
+            <p>Review Fixed Assets regularly</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isFundingArrangments"></md-checkbox>
+            <p>Have any funding arrangments such as Hire Purchases, Leases, Loans, Notes or Redeemable Shares</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isArrangementsReviewed"></md-checkbox>
+            <p>How often are these arrangements reviewed</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isCustomerContracts"></md-checkbox>
+            <p>Written Customer Contracts and Agreements</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isPriceIncreasePolicies"></md-checkbox>
+            <p>Official price increase policies</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isSWOTAnalysis"></md-checkbox>
+            <p>SWOT Analysis</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isTaxPlanning"></md-checkbox>
+            <p>Tax Planning and scheduling</p>
+        </md-list-item>
+         <md-list-item>
+            <md-checkbox ng-model="vm.isRegularBoardMeetings"></md-checkbox>
+            <p>Hold regular board meetings</p>
+        </md-list-item>
+   </md-list>
 </div>
