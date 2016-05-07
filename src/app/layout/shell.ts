@@ -8,10 +8,11 @@
     /**
      * @ngInject
      */
-    function Shell($rootScope, $scope, $timeout, $mdSidenav, config, logger, fbutil, $location, loginRedirectPath) {
+    function Shell($rootScope, $scope, $timeout, $mdSidenav, Auth, config, logger, fbutil, $location, loginRedirectPath) {
         /*jshint validthis: true */
         var vm = this;
         vm.title = config.appTitle;
+        vm.signInWithProvider = signInWithProvider;
         vm.signOut = signOut;
         vm.toggleLeft = buildDelayedToggler('left');
 
@@ -20,11 +21,27 @@
         function activate() {
         }
 
+        function signInWithProvider(provider: string) {
+            $scope.err = null;
+            Auth.$authWithOAuthPopup(provider, function(error, authData) {
+                if (error) {
+                    $scope.err = errMessage(error);
+                } else {
+                    console.log(authData);
+                    //$location.path('/dashboard');
+                }
+            });
+        }
+
         function signOut() {
             buildDelayedToggler('left');
             $rootScope.profile = null;
             fbutil.ref().unauth();
             $location.path(loginRedirectPath);
+        }
+        
+         function errMessage(err) {
+            return angular.isObject(err) && err.code ? err.code : err + '';
         }
 
         /**

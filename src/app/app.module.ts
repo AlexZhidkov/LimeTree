@@ -24,11 +24,7 @@
         'app.security',
         'app.home',
         'app.account',
-        'app.chat',
         'app.layout',
-        'app.login',
-        'app.orders',
-        'app.orderItem',
         'app.questionnaire',
         'app.actionableItems',
         'app.questions'
