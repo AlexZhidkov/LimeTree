@@ -6,7 +6,11 @@
             <p show-gt-md ng-show="profile">
                 <md-list>
                     <md-list-item md-ink-ripple>
-                        <i class="material-icons">toc</i>
+                        <i class="material-icons">perm_identity</i>
+                        <a class="menu-item" href="#/profile" ng-click="vm.toggleLeft()">Profile</a>
+                    </md-list-item>
+                    <md-list-item md-ink-ripple>
+                        <i class="material-icons">list</i>
                         <a class="menu-item" href="#/questionnaire" ng-click="vm.toggleLeft()">Questionnaire</a>
                     </md-list-item>
                     <md-list-item md-ink-ripple>

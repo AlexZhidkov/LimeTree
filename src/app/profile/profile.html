@@ -1,0 +1,18 @@
+<div flex-gt-md="50" layout="column" ng-cloak class="md-inline-form">
+    <md-content layout-padding>
+    <md-input-container class="md-block">
+            <label>Business Name</label>
+            <input ng-model="vm.businessName">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Address of Meetings</label>
+            <input ng-model="vm.address">
+        </md-input-container>
+        <md-autocomplete flex required md-input-name="autocompleteField" md-no-cache="vm.noCache" md-selected-item="vm.selectedItem"
+            md-search-text="vm.searchText" md-items="item in vm.querySearch(vm.searchText)" md-item-text="item.display" md-floating-label="Business Structure">
+            <md-item-template>
+                <span md-highlight-text="vm.searchText">{{item.display}}</span>
+            </md-item-template>
+        </md-autocomplete>
+    </md-content>
+</div>

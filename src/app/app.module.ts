@@ -23,6 +23,7 @@
         'app.config',
         'app.security',
         'app.home',
+        'app.profile',
         'app.account',
         'app.layout',
         'app.questionnaire',
