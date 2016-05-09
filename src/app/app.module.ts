@@ -27,6 +27,7 @@
         'app.account',
         'app.layout',
         'app.meeting',
+        'app.history',
         'app.questionnaire',
         'app.actionableItems',
         'app.questions'

@@ -8,9 +8,8 @@
     /**
      * @ngInject
      */
-    function Meeting(fbutil, QuestionList) {
+    function Meeting(fbutil) {
         var vm = this;
-        vm.questions = QuestionList;
     }
     
 })();
