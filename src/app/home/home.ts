@@ -1,14 +1,16 @@
 (function () {
     "use strict";
 
-    angular
-        .module('app.home')
-        .controller('Home', Home);
+    var module = angular.module('app.home');
 
-    /**
-     * @ngInject
-     */
-    function Home() {
-        var vm = this;
-    }
+    var controller = function() {
+        var vm = this;          
+    };
+
+    module.component("home", {
+        templateUrl: "app/home/home.html",
+        controllerAs: "vm",
+        controller: [controller]
+    });
+    
 })();
