@@ -1,16 +1,20 @@
 (function() {
     "use strict";
 
-    angular
-        .module('app.history')
-        .controller('History', History);
+    var module = angular.module('app.history');
 
     /**
      * @ngInject
      */
-    function History(fbutil, MeetingList) {
-        var vm = this;
+    var controller = function(MeetingList) {
+        var vm = this;          
         vm.meetings = MeetingList;
-    }
+    };
+
+    module.component("history", {
+        templateUrl: "app/history/history.html",
+        controllerAs: "vm",
+        controller: [controller]
+    });
     
 })();

@@ -1,15 +1,16 @@
 (function() {
     "use strict";
+    
+    var module = angular.module('app.meeting');
 
-    angular
-        .module('app.meeting')
-        .controller('Meeting', Meeting);
+    var controller = function() {
+        var vm = this;          
+    };
 
-    /**
-     * @ngInject
-     */
-    function Meeting(fbutil) {
-        var vm = this;
-    }
+    module.component("meeting", {
+        templateUrl: "app/meeting/meeting.html",
+        controllerAs: "vm",
+        controller: [controller]
+    });
     
 })();

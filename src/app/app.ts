@@ -7,7 +7,9 @@
         templateUrl: "app/layout/shell.html",
         $routeConfig: [
             { path: "/home", component:"home", name: "Home" },
-            { path: "/about", component: "about", name: "About" },
+            { path: "/meeting", component:"meeting", name: "Meeting" },
+            { path: "/history", component:"history", name: "History" },
+            { path: "/questionnaire", component: "questionnaire", name: "Questionnaire" },
             { path: "/**", redirectTo: ["Home", ""] }
         ]                   
     });
